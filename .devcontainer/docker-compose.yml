@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+ 
+  mytest:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    command: /bin/sh -c "tail -F /dev/null"
+    volumes:
+      # This is where VS Code should expect to find your project's source code and the value of "workspaceFolder" in .devcontainer/devcontainer.json
+      - ..:/workspace:cached
